@@ -16,7 +16,7 @@
 <meta property="og:description" content="《c++ premerplus》第十六章的笔记">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-06T03:24:00.000Z">
-<meta property="article:modified_time" content="2021-03-22T15:39:25.594Z">
+<meta property="article:modified_time" content="2021-03-23T12:24:50.581Z">
 <meta property="article:author" content="Luo jiale">
 <meta property="article:tag" content="javaBasic">
 <meta name="twitter:card" content="summary">
@@ -65,7 +65,7 @@
 			</ul>
 		</nav>
 		<nav>
-    总文章数 49
+    总文章数 50
 </nav>
 		<nav class="header-smart-menu">
     		
@@ -302,7 +302,7 @@
 <li>7种序列容器及其常用方法</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">deque			&#x2F;&#x2F;双端队列</span><br><span class="line">forward_list		&#x2F;&#x2F;只有正向迭代器</span><br><span class="line">list      &#x2F;&#x2F;链表，不支持随机访问，iterator只能++和--操作，且添加、删除元素后迭代器不失效</span><br><span class="line">queue			&#x2F;&#x2F;队列</span><br><span class="line">priority_queue  </span><br><span class="line">stack			&#x2F;&#x2F;栈</span><br><span class="line">vector    &#x2F;&#x2F;底层是数组</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct node &#123;</span><br><span class="line">  int a;</span><br><span class="line">  int b;</span><br><span class="line">  bool operator&lt;(node&amp; n) const&#123;</span><br><span class="line">    if (a &gt; n.a) &#123;</span><br><span class="line">      return true;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">      return false;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main() &#123;</span><br><span class="line">  priority_queue&lt;node&gt; pq;</span><br><span class="line">  pq.push(&#123; 1,3 &#125;);</span><br><span class="line">  pq.push(&#123; 4,3 &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <table>
     <tr><td>a.insert(p,t)</td><td>将t插入到p的前面</td></tr>
     <tr><td>a.insert(p,n,t)</td><td>将n个t插入到p的前面</td></tr>
@@ -724,6 +724,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">c++ basic</a>
               </li>
             
             <div class="clearfix"></div>
