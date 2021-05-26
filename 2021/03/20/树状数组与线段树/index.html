@@ -5,13 +5,13 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://ma-le-le.gitee.com/myblog">
+  <link rel="dns-prefetch" href="https://ljl20010215.github.io">
   <title>树状数组与线段树 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="学习了树状数组和线段树这两种数据结构的note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树状数组与线段树">
-<meta property="og:url" content="https://ma-le-le.gitee.com/myblog/2021/03/20/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%AE%B5%E6%A0%91/index.html">
+<meta property="og:url" content="https://ljl20010215.github.io/2021/03/20/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%AE%B5%E6%A0%91/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="学习了树状数组和线段树这两种数据结构的note">
 <meta property="og:locale" content="en_US">
@@ -68,7 +68,7 @@
 			</ul>
 		</nav>
 		<nav>
-    总文章数 58
+    总文章数 61
 </nav>
 		<nav class="header-smart-menu">
     		
@@ -211,7 +211,7 @@
 
 <h3 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h3><p><img src="https://img.imgdb.cn/item/6055fdad524f85ce29ebe77e.png" alt="树状数组图解"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#pragma once</span><br><span class="line">const int MAXN &#x3D; 1e+6 + 1;</span><br><span class="line">template&lt;typename T,int N&#x3D;MAXN&gt;</span><br><span class="line">class TreeArray &#123;</span><br><span class="line">public:</span><br><span class="line">    T tree[N];</span><br><span class="line">    inline int lowbit(int pos) &#123;</span><br><span class="line">        return pos &amp; -pos;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;更新树状数组某一位置的值</span><br><span class="line">    void update(int pos,T delta) &#123;</span><br><span class="line">        while (pos &lt;&#x3D; N) &#123;</span><br><span class="line">            tree[pos] +&#x3D; delta;</span><br><span class="line">            pos +&#x3D; lowbit(pos);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    T query(int pos) &#123;</span><br><span class="line">        T ans &#x3D; 0;</span><br><span class="line">        while (pos &gt; 0) &#123;</span><br><span class="line">            ans +&#x3D; tree[pos];</span><br><span class="line">            pos -&#x3D; lowbit(pos);</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;更新一个存储差分数组的树状数组</span><br><span class="line">    void update_range(int l, int r, T delta) &#123;</span><br><span class="line">        update(l, delta);</span><br><span class="line">        update(r + 1, -delta);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://ljl20010215.github.io/2021/03/20/acwing_65/#more">树状数组的典型题目—逆序对</a><br><a target="_blank" rel="noopener" href="https://ljl20010215.github.io/2021/03/20/luogu_65/">树状数组的典型题目—对数组的反复操作</a></p>
+<p><a href="https://ljl20010215.github.io/2021/03/20/acwing_65/#more">树状数组的典型题目—逆序对</a><br><a href="https://ljl20010215.github.io/2021/03/20/luogu_65/">树状数组的典型题目—对数组的反复操作</a></p>
 <h3 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h3><p><img src="https://img.imgdb.cn/item/6055fe73524f85ce29ec6245.png" alt="线段树原理图"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">#pragma once</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int MAXN &#x3D; 1000;</span><br><span class="line">template&lt;typename T,int N&#x3D;MAXN&gt;</span><br><span class="line">class SegmentTree &#123;</span><br><span class="line">public:</span><br><span class="line">	T tree[N];</span><br><span class="line">	inline int lp(int p) &#123; return p &lt;&lt; 1; &#125;</span><br><span class="line">	inline int rp(int p) &#123; return (p &lt;&lt; 1) + 1; &#125;</span><br><span class="line">	inline int mid(int l, int r) &#123; return (l + r) &gt;&gt; 1; &#125;</span><br><span class="line">	inline void pushup(int p) &#123;</span><br><span class="line">		tree[p] &#x3D; tree[lp(p)] + tree[rp(p)];</span><br><span class="line">	&#125;</span><br><span class="line">	void build(int l, int r, int p) &#123;</span><br><span class="line">		if (l &#x3D;&#x3D; r) &#123;</span><br><span class="line">			cin &gt;&gt; tree[p];</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		int m &#x3D; mid(l, r);</span><br><span class="line">		build(l, m, lp(p));</span><br><span class="line">		build(m + 1, r, rp(p));</span><br><span class="line">		pushup(p);</span><br><span class="line">	&#125;</span><br><span class="line">	void update(int pos, T v, int l, int r, int p) &#123;</span><br><span class="line">		if (l &#x3D;&#x3D; r) &#123;</span><br><span class="line">			tree [p] +&#x3D; v;</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		int m &#x3D; mid(l, r);</span><br><span class="line">		if (pos &lt;&#x3D; m) &#123;</span><br><span class="line">			update(pos, v, l, m, lp(p));</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			update(pos, v, m + 1, r, rp(p));</span><br><span class="line">		&#125;</span><br><span class="line">		pushup(p);</span><br><span class="line">	&#125;</span><br><span class="line">	T query(int L, int R, int l, int r, int p) &#123;</span><br><span class="line">		if (L &lt;&#x3D; l &amp;&amp; r &lt;&#x3D; R) &#123;</span><br><span class="line">			return tree[p];</span><br><span class="line">		&#125;</span><br><span class="line">		int m &#x3D; mid(l, r);</span><br><span class="line">		T res &#x3D; 0;</span><br><span class="line">		if (L &lt;&#x3D; m) res +&#x3D; query(L, R, l, m, lp(p));</span><br><span class="line">		if (R &gt;&#x3D; m + 1) res +&#x3D; query(L, R, m + 1, r, rp(p));</span><br><span class="line">		return res;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
@@ -316,7 +316,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ljl20010215.github.io/ee.com/myblog/2021/03/20/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%AE%B5%E6%A0%91/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ljl20010215.github.io/github.io/2021/03/20/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E4%B8%8E%E7%BA%BF%E6%AE%B5%E6%A0%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -554,6 +554,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">system</a>
               </li>
             
             <div class="clearfix"></div>
